@@ -1,4 +1,9 @@
-import styled from 'styled-components';
+/* eslint-disable @typescript-eslint/indent */
+import styled, { css } from 'styled-components';
+
+interface FormProps {
+    hasError: boolean;
+}
 
 export const Title = styled.div`
     color: #3a3a3a;
@@ -8,7 +13,7 @@ export const Title = styled.div`
     line-height: 50px;
 `;
 
-export const Form = styled.form`
+export const Form = styled.form<FormProps>`
     display: flex;
     margin-top: 40px;
     max-width: 700px;
@@ -20,6 +25,14 @@ export const Form = styled.form`
         color: #3a3a3a;
         padding: 0 24px;
         border-radius: 10px 0 0 10px;
+        border: 2px solid #fff;
+        border-right: 0;
+
+        ${(props) =>
+            props.hasError &&
+            css`
+                border-color: #e71d36;
+            `}
 
         &::placeholder {
             color: #bbb;
@@ -39,6 +52,12 @@ export const Form = styled.form`
             background: #63c754;
         }
     }
+`;
+
+export const Error = styled.span`
+    color: #e71d36;
+    display: block;
+    margin-top: 10px;
 `;
 
 export const Repositories = styled.div`
@@ -70,7 +89,8 @@ export const Repositories = styled.div`
         }
 
         div {
-            margin-left: 16px;
+            flex: 1;
+            margin: 0 15px;
 
             strong {
                 color: #3a3a3a;
@@ -80,7 +100,7 @@ export const Repositories = styled.div`
             p {
                 color: #bbb;
                 font-size: 16px;
-                margin-top: 2px;
+                margin-top: 3px;
             }
         }
 

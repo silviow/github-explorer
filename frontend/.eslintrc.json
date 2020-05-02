@@ -42,7 +42,15 @@
                 "tsx": "never"
             }
         ],
-        "react/jsx-indent": [ "warn", 4 ]
+        "react/jsx-indent": [ "warn", 4 ],
+        "react/jsx-indent-props": [ "warn", 4 ],
+        "@typescript-eslint/indent": ["warn", 4, { "ignoredNodes": ["JSXAttribute"]}],
+        "@typescript-eslint/explicit-function-return-type": [
+            "warn",
+            {
+                "allowExpressions": true
+            }
+        ]
     },
     "settings": {
         "import/resolver": {
