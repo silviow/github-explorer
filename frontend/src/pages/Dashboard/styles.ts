@@ -35,7 +35,7 @@ export const Form = styled.form<FormProps>`
             `}
 
         &::placeholder {
-            color: #bbb;
+            color: #a8a8b3;
         }
     }
 
@@ -98,7 +98,7 @@ export const Repositories = styled.div`
             }
 
             p {
-                color: #bbb;
+                color: #a8a8b3;
                 font-size: 16px;
                 margin-top: 3px;
             }
